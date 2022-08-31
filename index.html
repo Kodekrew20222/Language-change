@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  
+<body>
+  <h1 style="color: green">
+    Translator
+  </h1>
+    
+  <p>
+    Click on the buttons below to change
+    the language of the webpage.
+  </p>
+  
+
+  <button onclick="changeLanguage('eng')">
+    Change to English
+  </button>
+  <button onclick="changeLanguage('es')">
+    Change to Spanish
+  </button>
+  
+  
+
+  <div id="siteContent">
+    <p>
+        Baby Doux by Au grand Air was created to offer your children from 6 months to 3 years old, a
+    warm and cocooning space, in which they can fully grow-up. The interior and exterior spaces,
+    designed by a French architect, have been designed for the well-being of your children and to
+    offer them the ideal setting, conducive to their socialization, their awakening, their cognitive
+    development as well as their autonomy, in complete security
+    </p>
+  </div>
+  
+  
+  <script>
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+  
+    var language = {
+      eng: {
+        welcome: "Baby Doux by Au grand Air was created to offer your children from 6 months to 3 years old, a"+
+    "warm and cocooning space, in which they can fully grow-up. The interior and exterior spaces,"+
+    "designed by a French architect, have been designed for the well-being of your children and to"+
+    "offer them the ideal setting, conducive to their socialization, their awakening, their cognitive"+
+    "development as well as their autonomy, in complete security"
+      },
+      es: {
+        welcome: "Baby Doux by Au grand Air a été créé pour offrir" +
+        "à vos enfants de 6 mois à 3 ans, un espace chaleureux et cocooning, dans lequel ils peuv"+
+        "ent s’épanouir pleinement. Les espaces intérieurs comme extérieurs, conçus par un architecte français, ont été pensés pour le bien être de vos enfants et pour leur offrir le cad"+
+        "re idéal, propice à leur socialisation, leur éveil, leur développement " +
+        "changeLanguage ainsi qu’à leur autonomie, en toute sécurité. "
+      }
+    };
+  
+
+    if (window.location.hash) {
+  
+      
+      if (window.location.hash == "#es") {
+        siteContent.textContent =
+          language.es.welcome;
+      }
+      
+    }
+  </script>
+</body>
+  
+</html>
